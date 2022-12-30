@@ -30,7 +30,8 @@ observe({
                    ),
                    fluidRow(column(6,
                                   uiOutput(paste0("colnametable", number))),
-                            column(6, actionButton(paste0("màj_", number),paste0("Mettre à jour màj_", number))))
+                            column(6, actionButton(paste0("màj_", number),paste0("Mettre à jour en-tête"),
+                                                   class = "btn-primary")))
                    
           )
         })
@@ -55,7 +56,9 @@ observe({
             var_value <- colnames( lst[[my_i]])[k]
             textInput(paste0("file", my_i, "_col", k),
                       var_name, 
-                      paste0("file", my_i, "_col", k))
+                      var_value
+                      # paste0("file", my_i, "_col", k)
+                      )
           })
           })
         })
